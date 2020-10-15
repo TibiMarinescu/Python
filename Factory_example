@@ -1,0 +1,28 @@
+#Supermarket
+#Example of factory design pattern
+
+class Employee:
+    def __init__(self, name, age, function):
+        self._name = name
+        self._age = age
+        self._function = function
+
+    def presentation(self):
+        return "I am an employee of the supermarket!"
+
+class Customer:
+    def __init__(self, name):
+        self._name = name
+
+    def presentation(self):
+        return "I am a customer of the supermarket!"
+
+def get_person(person="employee"):
+    persons=dict(employee=Employee("Linda", "30", "seller"), customer=Customer("Andrew"))
+
+    return persons[person]
+
+x = get_person("employee")
+print (x)
+y = get_person("customer")
+print (y)
